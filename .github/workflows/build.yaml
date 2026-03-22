@@ -72,6 +72,8 @@ jobs:
           scan-type: image
           image-ref: docker.io/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }}
           version: v0.69.3
+          scanners: vuln
+          vuln-type: os,library
           format: table
           output: trivy-report.txt
           exit-code: 1
